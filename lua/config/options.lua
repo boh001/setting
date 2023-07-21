@@ -9,11 +9,8 @@ local options = {
   showtabline = 2,                      -- Always show tabs
   swapfile = false,
   wrap = false,
-  encoding = "utf-8"
-}
-
-local hi = {
-  asdf
+  encoding = "utf-8",
+  autoread = true
 }
 
 local globals = {

@@ -14,3 +14,4 @@ require('config.lazy')
 
 -- plugins
 require('plugins.nvim-tree')
+require('plugins.mason')
