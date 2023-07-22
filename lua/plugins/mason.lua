@@ -11,11 +11,27 @@ require("mason-lspconfig").setup({
 })
 
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Tab>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+  }),
   sources = {
-    { name = 'nvim_lsp' }
-  }
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
 })
 
 local lspconfig = require("lspconfig")
@@ -37,4 +53,5 @@ lspconfig.html.setup({
 lspconfig.tsserver.setup({
   capabilities = capabilities
 })
+
 

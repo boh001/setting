@@ -29,8 +29,9 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-calc",
+      "saadparwaiz1/cmp_luasnip",
+			{ "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
      }
   },
-  "hrsh7th/cmp-nvim-lsp",
   "pocco81/auto-save.nvim",
 }
