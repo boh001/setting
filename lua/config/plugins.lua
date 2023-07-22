@@ -7,8 +7,12 @@ return {
 			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
-	"nvim-tree/nvim-web-devicons",
-	"nvim-tree/nvim-tree.lua",
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+	    "nvim-tree/nvim-web-devicons",
+    }
+  },
   "williamboman/mason.nvim",
   {
     "neovim/nvim-lspconfig",
@@ -34,4 +38,18 @@ return {
      }
   },
   "pocco81/auto-save.nvim",
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+	    "nvim-tree/nvim-web-devicons",
+    }
+  },
+  {
+    'akinsho/bufferline.nvim', 
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 }

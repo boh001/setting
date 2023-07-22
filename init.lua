@@ -15,3 +15,6 @@ require('config.lazy')
 -- plugins
 require('plugins.nvim-tree')
 require('plugins.mason')
+require('plugins.lualine')
+require('plugins.telescope')
+--require('plugins.bufferline')

@@ -10,7 +10,8 @@ local options = {
   swapfile = false,
   wrap = false,
   encoding = "utf-8",
-  autoread = true
+  autoread = true,
+  termguicolors = true,
 }
 
 local globals = {
