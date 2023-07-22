@@ -13,6 +13,7 @@ require('config.keymap')
 require('config.lazy')
 
 -- plugins
+require('plugins.alpha')
 require('plugins.nvim-tree')
 require('plugins.mason')
 require('plugins.lualine')

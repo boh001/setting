@@ -61,4 +61,9 @@ return {
       end
   },
   "terryma/vim-multiple-cursors",
+  {
+    'goolord/alpha-nvim',
+    event = "VimEnter",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
 }

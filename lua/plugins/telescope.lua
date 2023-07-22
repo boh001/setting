@@ -3,8 +3,14 @@ local telescope = require("telescope")
 telescope.setup({
   theme = "tokyonight",
   defaults = {
-    layout_strategy = 'cursor',
+    layout_strategy = 'horizontal',
     sorting_strategy = "ascending",
+    layout_config = {
+      width = 0.6,
+      height = 0.6,
+      preview_width = 0.4,
+      prompt_position = 'top',
+    },
   }
 })
 
