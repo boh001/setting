@@ -72,3 +72,6 @@ keymap("i", '"', jump_quote_to_next('"'), { silent = true, expr = true })
 keymap("i", "'", jump_quote_to_next("'"), { silent = true, expr = true })
 keymap("i", "`", jump_quote_to_next("`"), { silent = true, expr = true })
 
+-- buffer
+keymap("n", ":q", ":bd", { silent = true })
+
