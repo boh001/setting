@@ -11,6 +11,7 @@
 
 ```bash
 // .zshrc
+
 ZSH_THEME-"bira"
 ```
 
@@ -280,4 +281,16 @@ npm install -g typescript typescript-language-server
 - eslint
 ```bash
 npm i -g vscode-langservers-extracted
+```
+
+## Fnm
+
+### 설치
+```bash
+brew install fnm
+```
+```bash
+// .zshrc
+
+eval "$(fnm env --use-on-cd)"
 ```
