@@ -27,22 +27,6 @@ cmp.setup({
 })
 
 local lspconfig = require("lspconfig")
-local function lsp_definition_in_tab()
-  -- 현재 버퍼와 위치 저장
-  local current_bufnr = vim.api.nvim_get_current_buf()
-  local current_winid = vim.api.nvim_get_current_win()
-  local current_cursor = vim.api.nvim_win_get_cursor(current_winid)
-
-  -- 새 탭을 열고 해당 탭으로 이동
-  vim.api.nvim_command('tabnew')
-
-  -- 저장한 버퍼로 이동
-  vim.api.nvim_set_current_buf(current_bufnr)
-  vim.api.nvim_win_set_cursor(0, current_cursor)
-
-  -- LSP의 `vim.lsp.buf.definition()` 함수를 호출하여 정의로 이동
-  vim.lsp.buf.definition()
-end
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
