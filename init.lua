@@ -15,6 +15,7 @@ require('config.lazy')
 -- plugins
 require('plugins.alpha')
 require('plugins.nvim-tree')
+require('plugins.lsp')
 require('plugins.mason')
 require('plugins.lualine')
 require('plugins.telescope')

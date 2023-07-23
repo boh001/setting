@@ -1,4 +1,5 @@
 # 개발 세팅
+![dashboard](dashboard.png)
 
 ## [Homebrew](https://brew.sh/index_ko)
 
