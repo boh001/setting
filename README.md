@@ -295,3 +295,8 @@ brew install fnm
 
 eval "$(fnm env --use-on-cd)"
 ```
+
+## TODO
+- 괄호 엔터 눌렀을 때 줄바꿈 기능 추가
+- lsp 에러, 경고 색깔 변경(헷갈림)
+- tmux 설정 추가 
