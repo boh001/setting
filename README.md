@@ -22,6 +22,8 @@ ZSH_THEME-"bira"
 
 ```bash
 brew install lazygit
+
+brew install diff-so-fancy
 ```
 
 ### 설정
