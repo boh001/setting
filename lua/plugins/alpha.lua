@@ -13,18 +13,16 @@ local config_dir = fn.stdpath('config')
 -- │ Header                                                   │
 -- ╰──────────────────────────────────────────────────────────╯
 
-local header_legacy = {
-  " ████████                           ██            ",
-  "░██░░░░░                           ░░             ",
-  "░██        █████   ██████  ██    ██ ██ ██████████ ",
-  "░███████  ██░░░██ ██░░░░██░██   ░██░██░░██░░██░░██",
-  "░██░░░░  ░██  ░░ ░██   ░██░░██ ░██ ░██ ░██ ░██ ░██",
-  "░██      ░██   ██░██   ░██ ░░████  ░██ ░██ ░██ ░██",
-  "░████████░░█████ ░░██████   ░░██   ░██ ███ ░██ ░██",
-  "░░░░░░░░  ░░░░░   ░░░░░░     ░░    ░░ ░░░  ░░  ░░ ",
+local header_hello = {
+ "██╗  ██╗  ███████╗  ██╗       ██╗        ██████╗ ",
+ "██║  ██║  ██╔════╝  ██║       ██║       ██╔═══██╗",
+ "███████║  █████╗    ██║       ██║       ██║   ██║",
+ "██╔══██║  ██╔══╝    ██║       ██║       ██║   ██║",
+ "██║  ██║  ███████╗  ███████╗  ███████╗  ╚██████╔╝",
+ "╚═╝  ╚═╝  ╚══════╝  ╚══════╝  ╚══════╝   ╚═════╝ ",
 }
 
-local header = {
+local header_planet = {
   [[                                                   ]],
   [[                                              ___  ]],
   [[                                           ,o88888 ]],
@@ -51,10 +49,10 @@ local header = {
 }
 
 dashboard.section.header.type = "text";
-dashboard.section.header.val = header;
+dashboard.section.header.val = header_hello;
 dashboard.section.header.opts = {
   position = "center",
-  hl = "EcovimHeader",
+  hl = "Header",
 }
 
 -- ╭──────────────────────────────────────────────────────────╮
@@ -73,7 +71,7 @@ local hi_top_section = {
   val =  "┌────────────   Today is " .. date .. " ────────────┐",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "HeaderInfo"
   }
 }
 
@@ -82,7 +80,7 @@ local hi_middle_section = {
   val = "│                                                │",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "HeaderInfo"
   }
 }
 
@@ -91,7 +89,7 @@ local hi_bottom_section = {
   val = "└───══───══───══───  " .. datetime .. "  ───══───══───══────┘",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "HeaderInfo"
   }
 }
 
@@ -193,7 +191,7 @@ local section = {
 
 local opts = {
   layout = {
-    {type = "padding", val = 3},
+    {type = "padding", val = 10},
     section.header,
     {type = "padding", val = 1},
     section.hi_top_section,

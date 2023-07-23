@@ -1,8 +1,7 @@
 local workspaces = require("workspaces")
 workspaces.setup({
-    hooks = {
-        open = "NvimTreeOpen",
-    }
+  sort = false,
+  hooks = {
+    open = "NvimTreeOpen",
+  }
 })
-
-workspaces.add_dir("~/projects")
