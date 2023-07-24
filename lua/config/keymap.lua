@@ -34,7 +34,6 @@ local indent_in_bracket = function ()
   local line_content = vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]
   local content = string.sub(line_content, col, col + 1)
 
-  print(content)
   if is_bracket(content) then
     return "<CR><Esc>ko<Esc><S-i><Tab>"
   else

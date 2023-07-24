@@ -23,9 +23,14 @@ telescope.setup({
 
 local builtin = require('telescope.builtin')
 
+local find_files = function()
+  builtin.find_files({ hidden = true })
+end
+
 vim.keymap.set('n', '<C-`>', builtin.find_files, {})
-vim.keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<C-f>', find_files, {})
 vim.keymap.set('n', '<C-o>', "<cmd>Telescope workspaces<CR>", {})
+vim.keymap.set('n', '<C-h>', "<cmd>Telescope oldfiles hidden=true", {})
 vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f-h>', builtin.help_tags, {})

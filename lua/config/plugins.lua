@@ -73,4 +73,5 @@ return {
       'nvim-telescope/telescope.nvim',
     }
   },
+  { 'echasnovski/mini.nvim', version = '*' },
 }
