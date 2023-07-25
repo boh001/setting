@@ -24,3 +24,5 @@ require('plugins.workspaces')
 require('plugins.glow')
 require('plugins.null-ls')
 require('plugins.osc52')
+require('plugins.toggleterm')
+

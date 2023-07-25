@@ -75,6 +75,7 @@ return {
       'nvim-telescope/telescope.nvim',
     }
   },
-  { 'echasnovski/mini.nvim', version = '*' },
+  { 'echasnovski/mini.nvim',   version = '*' },
   'ojroques/nvim-osc52',
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
 }
