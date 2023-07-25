@@ -1,28 +1,28 @@
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme tokyonight]])
-		end,
-	},
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
-	    "nvim-tree/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons",
     }
   },
   "williamboman/mason.nvim",
   {
     "neovim/nvim-lspconfig",
     lazy = false,
-		dependencies = {
-			"mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"hrsh7th/cmp-nvim-lsp",
+    dependencies = {
+      "mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
       "jose-elias-alvarez/null-ls.nvim"
-		},
+    },
   },
   "jose-elias-alvarez/null-ls.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -30,24 +30,24 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-calc",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-calc",
       "saadparwaiz1/cmp_luasnip",
-			{ "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
-     }
+      { "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
+    }
   },
   "pocco81/auto-save.nvim",
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
-	    "nvim-tree/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons",
     }
   },
   {
-    'akinsho/bufferline.nvim', 
+    'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
   {
@@ -59,8 +59,8 @@ return {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup()
-      end
+      require("nvim-surround").setup()
+    end
   },
   "terryma/vim-multiple-cursors",
   {
@@ -76,4 +76,5 @@ return {
     }
   },
   { 'echasnovski/mini.nvim', version = '*' },
+  'ojroques/nvim-osc52',
 }

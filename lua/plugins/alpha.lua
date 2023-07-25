@@ -138,9 +138,8 @@ dashboard.section.buttons.val = {
   button("<C-o>", icons.fileNoBg .. " " .. "Find Project", "<cmd>Telescope workspaces<CR>", {}),
   button("<C-`>", icons.fileNoBg .. " " .. "Find File", "<cmd>Telescope find_files hidden=true<CR>", {}),
   button("<C-=>", icons.fileRecent .. " " .. "Recents", "<cmd>Telescope oldfiles hidden=true<CR>", {}),
-  button("SPC / s d", icons.timer .. " " .. "Load Current Dir Session", "<cmd>SessionManager load_current_dir_session<CR>", {}),
-  button("SPC / L", icons.container .. " " .. "Manage Plugins", "<cmd>Lazy<CR>", {}),
-  button("SPC / c", icons.cog .. " " .. "Settings", "<cmd>e $MYVIMRC<CR>", {}),
+  button("<leader>l", icons.container .. " " .. "Manage Plugins", "<cmd>Lazy<CR>", {}),
+  button("<leader>n", icons.cog .. " " .. "Settings", "<cmd>e $MYVIMRC<CR>", {}),
   button("-", icons.exit .. " " .. "Exit", "<cmd>exit<CR>", {}),
 }
 

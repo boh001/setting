@@ -274,20 +274,6 @@ keybinding:
 brew install nvim
 ```
 
-### Telescope.nvim
-
-- [node_modules, .git 제외한 파일검색 기능을 위해 추가](https://github.com/nvim-telescope/telescope.nvim/issues/522)
-
-```bash
-brew install ripgrep
-
-// .ripgrep
-{
-  "ignore": ["node_modules", ".git"],
-  "smart_case": true
-}
-```
-
 ### [LSP](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
 - tsserver

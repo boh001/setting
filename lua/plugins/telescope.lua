@@ -13,6 +13,12 @@ telescope.setup({
       preview_width = 0.4,
       prompt_position = 'top',
     },
+    file_ignore_patterns = {
+      "^node_modules/",
+      "^.git/",
+      "^.zsh_sessions/"
+
+    },
   },
   extensions = {
     workspaces = {
@@ -27,6 +33,12 @@ local find_files = function()
   builtin.find_files({ hidden = true })
 end
 
+local find_references = function()
+  builtin.lsp_references({
+    show_line = false,
+  })
+end
+
 vim.keymap.set('n', '<C-`>', builtin.find_files, {})
 vim.keymap.set('n', '<C-f>', find_files, {})
 vim.keymap.set('n', '<C-o>', "<cmd>Telescope workspaces<CR>", {})
@@ -34,4 +46,5 @@ vim.keymap.set('n', '<C-=>', "<cmd>Telescope oldfiles hidden=true<CR>", {})
 vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f-h>', builtin.help_tags, {})
+vim.keymap.set('n', 'gr', find_references, {})
 

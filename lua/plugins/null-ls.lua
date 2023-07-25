@@ -13,7 +13,3 @@ local format = function()
 end
 
 vim.keymap.set('n', ',f', format)
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = '',
-  callback = format
-})
