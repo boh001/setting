@@ -74,14 +74,14 @@ lspconfig.lua_ls.setup({
 lspconfig.cssls.setup({
   capabilities = capabilities
 })
-lspconfig.eslint.setup({
-  capabilities = capabilities
-})
 lspconfig.html.setup({
   capabilities = capabilities
 })
 lspconfig.tsserver.setup({
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+  end,
 })
 lspconfig.marksman.setup({
   capabilities = capabilities
