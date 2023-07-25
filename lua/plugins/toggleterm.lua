@@ -6,8 +6,8 @@ require("toggleterm").setup({
 
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 'n', '<esc>', ':q<CR>', opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '-', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 'n', '-', ':q<CR>', opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
@@ -24,4 +24,4 @@ vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = tr
 vim.keymap.set("n", "<leader>1", ":1ToggleTerm<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>2", ":2ToggleTerm<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>3", ":3ToggleTerm<CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>4", ":ToggleTerm<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>4", ":4ToggleTerm<CR>", {noremap = true, silent = true})
