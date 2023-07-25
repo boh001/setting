@@ -31,6 +31,14 @@ brew install diff-so-fancy
 
 ### 설정
 
+```bash
+// .zshrc
+
+export GIT_EDITOR=nvim
+```
+
+### 설정
+
 ```yaml
 gui:
   # stuff relating to the UI
