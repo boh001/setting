@@ -12,6 +12,7 @@ local options = {
   encoding = "utf-8",
   autoread = true,
   termguicolors = true,
+  numberwidth = 5,
 }
 
 local globals = {

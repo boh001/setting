@@ -78,4 +78,5 @@ return {
   { 'echasnovski/mini.nvim',   version = '*' },
   'ojroques/nvim-osc52',
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
+  'norcalli/nvim-colorizer.lua',
 }

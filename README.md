@@ -312,4 +312,4 @@ eval "$(fnm env --use-on-cd)"
 
 ## TODO
 
-- trouble.nvim 적용
+- 개발하면서 추가 예정
