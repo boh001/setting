@@ -304,4 +304,4 @@ eval "$(fnm env --use-on-cd)"
 
 ## TODO
 
-- tmux 설정 추가
+- trouble.nvim 적용
