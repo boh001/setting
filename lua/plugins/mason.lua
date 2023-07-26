@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
     "html",
     "tsserver",
     "marksman",
+    'dockerls'
   },
   automatic_installation = true
 })
