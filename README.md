@@ -285,6 +285,16 @@ keybinding:
 brew install nvim
 ```
 
+### [Workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
+
+```bash
+// 프로젝트 디렉토리 추가
+:WorkspacesAddDir [path]
+
+// 프로젝트 디렉토리 삭
+:WorkspacesRemoveDir [name]
+```
+
 ### [LSP](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
 - tsserver
