@@ -17,9 +17,7 @@
 ZSH_THEME-"bira"
 ```
 
-## [Tmux]()
-
-## [LazyGit]()
+## [LazyGit](https://github.com/jesseduffield/lazygit)
 
 ### 설치
 
@@ -39,7 +37,12 @@ export GIT_EDITOR=nvim
 
 ### 설정
 
+- Linux: ~/.config/lazygit/config.yml
+- MacOS: ~/Library/Application Support/lazygit/config.yml
+- Windows: %APPDATA%\lazygit\config.yml
+
 ```yaml
+
 gui:
   # stuff relating to the UI
   windowSize: "normal" # one of 'normal' | 'half' | 'full' default is 'normal'
