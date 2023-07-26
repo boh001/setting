@@ -79,4 +79,12 @@ return {
   'ojroques/nvim-osc52',
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
   'norcalli/nvim-colorizer.lua',
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+  },
 }
