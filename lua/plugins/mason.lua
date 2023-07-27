@@ -7,7 +7,8 @@ require("mason-lspconfig").setup({
     "html",
     "tsserver",
     "marksman",
-    'dockerls'
+    'dockerls',
+    'terraformls',
   },
   automatic_installation = true
 })

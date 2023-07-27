@@ -95,5 +95,6 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  'f-person/git-blame.nvim'
+  'f-person/git-blame.nvim',
+  "nvim-treesitter/nvim-treesitter",
 }
