@@ -1,6 +1,7 @@
 --Neovim init file
 
 -- config
+require('config.keymappings')
 require('config.options')
 require('config.colorscheme')
 require('config.lazy')

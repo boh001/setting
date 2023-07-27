@@ -97,6 +97,6 @@ return {
   },
   'f-person/git-blame.nvim',
   "nvim-treesitter/nvim-treesitter",
-  'alvan/vim-closetag',
   'jiangmiao/auto-pairs',
+  "windwp/nvim-ts-autotag",
 }
