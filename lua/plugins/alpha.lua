@@ -136,6 +136,7 @@ end
 
 dashboard.section.buttons.val = {
   button("<C-o>", icons.fileNoBg .. " " .. "Find Project", "<cmd>Telescope workspaces<CR>", {}),
+  button("<C-s>", icons.fileNoBg .. " " .. "Find Session", "<cmd>Telescope session-lens search_session<CR>", {}),
   button("<C-`>", icons.fileNoBg .. " " .. "Find File", "<cmd>Telescope find_files hidden=true<CR>", {}),
   button("<C-=>", icons.fileRecent .. " " .. "Recents", "<cmd>Telescope oldfiles hidden=true<CR>", {}),
   button("<leader>l", icons.container .. " " .. "Manage Plugins", "<cmd>Lazy<CR>", {}),
