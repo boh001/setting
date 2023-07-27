@@ -1,3 +1,5 @@
+local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
 
 telescope.load_extension("workspaces")
@@ -17,8 +19,11 @@ telescope.setup({
       "^node_modules/",
       "^.git/",
       "^.zsh_sessions/"
-
     },
+    mappings = {
+      i = { ["<c-y>"] = trouble.open_with_trouble },
+      n = { ["<c-y>"] = trouble.open_with_trouble },
+    }
   },
   extensions = {
     workspaces = {
@@ -47,4 +52,3 @@ vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f-h>', builtin.help_tags, {})
 vim.keymap.set('n', 'gr', find_references, {})
-

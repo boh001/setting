@@ -87,4 +87,12 @@ return {
       "jose-elias-alvarez/null-ls.nvim",
     },
   },
+  {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  }
 }

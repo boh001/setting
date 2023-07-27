@@ -26,4 +26,4 @@ require('plugins.null-ls')
 require('plugins.osc52')
 require('plugins.toggleterm')
 require('plugins.colorizer')
-
+require('plugins.trouble')
