@@ -31,7 +31,7 @@ trouble.setup {
     next = { "j", "<C-n>" }          -- next item
   },
   indent_lines = true,               -- add an indent guide below the fold icons
-  auto_open = true,                  -- automatically open the list when you have diagnostics
+  auto_open = false,                  -- automatically open the list when you have diagnostics
   auto_close = true,                 -- automatically close the list when you have no diagnostics
   auto_preview = true,               -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
   auto_fold = false,                 -- automatically fold a file trouble list at creation
@@ -46,9 +46,4 @@ trouble.setup {
   use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 };
 
-vim.api.nvim_create_autocmd({ 'WinLeave' }, {
-  pattern = "*",
-  callback = function()
-    trouble.close()
-  end,
-})
+vim.keymap.set("n", "<leader>d", "<cmd>TroubleToggle<CR>")
