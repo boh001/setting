@@ -5,7 +5,7 @@ vim.opt.termguicolors = true
 
 local function on_attach(bufnr)
   local api = require("nvim-tree.api")
-  
+
   local function opts(desc)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
@@ -35,19 +35,23 @@ require("nvim-tree").setup({
     enable = true,
     update_root = true
   },
+
+  view = {
+    width = 45,
+  },
 })
 
 
 vim.keymap.set(
-  "n", 
-  "<C-t>", 
-  "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>", 
+  "n",
+  "<C-t>",
+  "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>",
   { noremap = true, silent = true }
 )
 
 vim.keymap.set(
-  "n", 
-  "<C-h>", 
-  "<cmd>lua require('nvim-tree.api').tree.focus()<CR>", 
+  "n",
+  "<C-h>",
+  "<cmd>lua require('nvim-tree.api').tree.focus()<CR>",
   { noremap = true, silent = true }
 )

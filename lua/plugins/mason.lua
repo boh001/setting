@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
     "marksman",
     'dockerls',
     'terraformls',
+    'jsonls',
   },
   automatic_installation = true
 })
