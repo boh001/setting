@@ -1,6 +1,5 @@
-local actions = require("telescope.actions")
-local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
+local actions = require("telescope.actions")
 
 telescope.load_extension("workspaces")
 telescope.load_extension("session-lens")
@@ -21,9 +20,13 @@ telescope.setup({
       "^.zsh_sessions/"
     },
     mappings = {
-      i = { ["<c-y>"] = trouble.open_with_trouble },
-      n = { ["<c-y>"] = trouble.open_with_trouble },
-    }
+      n = {
+        ["<c-d>"] = actions.delete_buffer,
+      },
+      i = {
+        ["<c-d>"] = actions.delete_buffer,
+      },
+    },
   },
   extensions = {
     workspaces = {
