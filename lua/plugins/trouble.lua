@@ -47,3 +47,4 @@ trouble.setup {
 };
 
 vim.keymap.set("n", "<leader>d", "<cmd>TroubleToggle<CR>")
+vim.keymap.set("n", "<leader>dd", "<cmd>TroubleToggle workspace_diagnostics<CR>")
