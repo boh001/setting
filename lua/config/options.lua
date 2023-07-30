@@ -1,6 +1,6 @@
 local options = {
   number = true,
-  --clipboard = "unnamedplus", -- Copy-paste between vim and everything else
+  clipboard = "unnamed",
   shiftwidth = 2,                    -- Change a number of space characters inserted for indentation
   expandtab = true,
   tabstop = 2,
