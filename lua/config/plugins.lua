@@ -99,11 +99,5 @@ return {
   "nvim-treesitter/nvim-treesitter",
   'jiangmiao/auto-pairs',
   "windwp/nvim-ts-autotag",
-  'rmagatti/auto-session',
-
-  {
-    'rmagatti/session-lens',
-    dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
-  },
   "lukas-reineke/indent-blankline.nvim",
 }

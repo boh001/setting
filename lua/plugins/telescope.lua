@@ -2,7 +2,6 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 
 telescope.load_extension("workspaces")
-telescope.load_extension("session-lens")
 
 telescope.setup({
   theme = "tokyonight",
@@ -51,7 +50,6 @@ vim.keymap.set('n', '<C-`>', find_files, {})
 vim.keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<C-o>', "<cmd>Telescope workspaces<CR>", {})
 vim.keymap.set('n', '<C-=>', "<cmd>Telescope oldfiles hidden=true<CR>", {})
-vim.keymap.set('n', '<C-s>', "<cmd>Telescope session-lens search_session<CR>", {})
 vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f-h>', builtin.help_tags, {})
