@@ -26,6 +26,9 @@ telescope.setup({
         ["<c-d>"] = actions.delete_buffer,
       },
     },
+    find_command = { "fd", "-t=f", "-a" },
+    path_display = { "absolute" },
+    wrap_results = true
   },
   extensions = {
     workspaces = {
