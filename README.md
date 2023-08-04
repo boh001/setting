@@ -17,6 +17,32 @@
 ZSH_THEME-"bira"
 ```
 
+## Tmux
+
+### 설치
+```bash
+brew install tmux
+```
+
+### 설정
+```conf
+# remap prefix from 'C-b' to 'C-a'
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+set -g mouse on
+
+setw -g mode-keys vi
+
+# scrollback buffer size increase
+set -g history-limit 100000
+
+# bar color
+set -g status-bg black
+set -g status-fg white
+```
+
 ## [LazyGit](https://github.com/jesseduffield/lazygit)
 
 ### 설치

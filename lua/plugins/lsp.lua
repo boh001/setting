@@ -101,6 +101,10 @@ lspconfig.marksman.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+lspconfig.terraformls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 lspconfig.dockerls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
