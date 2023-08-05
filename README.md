@@ -8,13 +8,14 @@
 
 - fontSize: 14
 - font: [NerdFont](https://www.nerdfonts.com/)
+- colorscheme: [tokyonight-storm](https://iterm2colorschemes.com/)
 
 ## [Oh-my-zsh](https://ohmyz.sh/)
 
 ```bash
 // .zshrc
 
-ZSH_THEME-"bira"
+ZSH_THEME-"af-magic"
 ```
 
 ## Tmux
@@ -22,10 +23,19 @@ ZSH_THEME-"bira"
 ### 설치
 ```bash
 brew install tmux
+
+brew install tmp
 ```
 
 ### 설정
-```conf
+
+```
+set -g @plugin 'tmux-plugins/tpm'
+
+set -g @plugin "janoamaral/tokyo-night-tmux"
+
+run '~/.tmux/plugins/tpm/tpm'
+
 # remap prefix from 'C-b' to 'C-a'
 unbind C-b
 set-option -g prefix C-a
@@ -37,10 +47,6 @@ setw -g mode-keys vi
 
 # scrollback buffer size increase
 set -g history-limit 100000
-
-# bar color
-set -g status-bg black
-set -g status-fg white
 ```
 
 ## [LazyGit](https://github.com/jesseduffield/lazygit)
