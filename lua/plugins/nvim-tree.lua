@@ -39,6 +39,11 @@ require("nvim-tree").setup({
   view = {
     width = 45,
   },
+
+  filters = {
+    git_ignored = false,
+    dotfiles = false,
+  }
 })
 
 
