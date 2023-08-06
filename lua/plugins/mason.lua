@@ -10,6 +10,7 @@ require("mason-lspconfig").setup({
     'dockerls',
     'terraformls',
     'jsonls',
+    'bashls',
   },
   automatic_installation = true
 })
