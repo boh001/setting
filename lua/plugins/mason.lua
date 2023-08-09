@@ -11,6 +11,7 @@ require("mason-lspconfig").setup({
     'terraformls',
     'jsonls',
     'bashls',
+    'docker_compose_language_service'
   },
   automatic_installation = true
 })

@@ -113,6 +113,10 @@ lspconfig.bashls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+lspconfig.docker_compose_language_service.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- Diagnostic config
 
