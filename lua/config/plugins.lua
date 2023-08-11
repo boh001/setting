@@ -100,4 +100,5 @@ return {
   'jiangmiao/auto-pairs',
   "windwp/nvim-ts-autotag",
   "lukas-reineke/indent-blankline.nvim",
+  'numToStr/Comment.nvim',
 }
