@@ -1,7 +1,7 @@
 local options = {
   number = true,
   clipboard = "unnamed",
-  shiftwidth = 2,                    -- Change a number of space characters inserted for indentation
+  shiftwidth = 2, -- Change a number of space characters inserted for indentation
   expandtab = true,
   tabstop = 2,
   smartcase = true,
@@ -13,6 +13,7 @@ local options = {
   autoread = true,
   termguicolors = true,
   numberwidth = 5,
+  cursorline = true
 }
 
 local globals = {
