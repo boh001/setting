@@ -18,7 +18,7 @@
 ```bash
 brew install tmux
 
-brew install tmp
+brew install tpm
 ```
 
 ## [LazyGit](https://github.com/jesseduffield/lazygit)
