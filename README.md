@@ -18,7 +18,7 @@
 ```bash
 brew install tmux
 
-brew install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## [LazyGit](https://github.com/jesseduffield/lazygit)
