@@ -62,7 +62,6 @@ return {
       require("nvim-surround").setup()
     end
   },
-  "terryma/vim-multiple-cursors",
   {
     'goolord/alpha-nvim',
     event = "VimEnter",
@@ -101,4 +100,6 @@ return {
   "windwp/nvim-ts-autotag",
   "lukas-reineke/indent-blankline.nvim",
   'numToStr/Comment.nvim',
+  'yamatsum/nvim-cursorline',
+  'mg979/vim-visual-multi',
 }
