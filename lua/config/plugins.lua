@@ -99,7 +99,7 @@ return {
   'jiangmiao/auto-pairs',
   "windwp/nvim-ts-autotag",
   "lukas-reineke/indent-blankline.nvim",
-  'numToStr/Comment.nvim',
   'yamatsum/nvim-cursorline',
   'mg979/vim-visual-multi',
+  'numToStr/Comment.nvim',
 }
