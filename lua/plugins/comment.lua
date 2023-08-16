@@ -1,9 +1,9 @@
 require("Comment").setup({
   toggler = {
-    line = 'gc',
+    line = '<leader>c',
   },
   opleader = {
-    block = 'gc'
+    block = '<leader>c'
   },
   mappings = {
     basic = true,
