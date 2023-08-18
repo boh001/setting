@@ -11,13 +11,14 @@ require("mason-lspconfig").setup({
     'terraformls',
     'jsonls',
     'bashls',
-    'docker_compose_language_service'
+    'docker_compose_language_service',
   },
   automatic_installation = true
 })
 require("mason-null-ls").setup({
   ensure_installed = {
     "prettier",
+    'shellcheck',
   },
   automatic_installation = true
 })

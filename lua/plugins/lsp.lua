@@ -262,4 +262,4 @@ vim.cmd([[
  highlight DiagnosticUnderlineOk cterm=underline gui=underline guifg=LightGreen
 ]])
 
-vim.o.updatetime = 1000
+vim.o.updatetime = 500

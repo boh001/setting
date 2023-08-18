@@ -1,9 +1,11 @@
 local null_ls = require("null-ls")
 
+local shellcheck = null_ls.builtins.code_actions.shellcheck
 local prettier = null_ls.builtins.formatting.prettier
 
 local sources = {
-  prettier
+  shellcheck,
+  prettier,
 }
 
 null_ls.setup({ sources = sources })
