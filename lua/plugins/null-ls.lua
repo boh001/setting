@@ -2,10 +2,12 @@ local null_ls = require("null-ls")
 
 local shellcheck = null_ls.builtins.code_actions.shellcheck
 local prettier = null_ls.builtins.formatting.prettier
+local clangFormat = null_ls.builtins.formatting.clang_format
 
 local sources = {
   shellcheck,
   prettier,
+  clangFormat,
 }
 
 null_ls.setup({ sources = sources })

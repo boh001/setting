@@ -1,16 +1,22 @@
 # 개발 세팅
 
 ![dashboard](dashboard.png)
+## Linux
+### [Gogh](https://github.com/Gogh-Co/Gogh)
+### [Oh-my-bash] 
 
-## [Homebrew](https://brew.sh/index_ko)
+## Mac
 
-## [Iterm2](https://iterm2.com/)
+### [Iterm2](https://iterm2.com/)
 
 - fontSize: 14
 - font: [NerdFont](https://www.nerdfonts.com/)
 - colorscheme: [tokyonight-storm](https://iterm2colorschemes.com/)
 
-## [Oh-my-zsh](https://ohmyz.sh/)
+### [Oh-my-zsh](https://ohmyz.sh/)
+
+## [Homebrew](https://brew.sh/index_ko)
+
 
 ## Tmux
 
