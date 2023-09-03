@@ -14,7 +14,6 @@ telescope.setup({
       prompt_position = 'top',
     },
     file_ignore_patterns = {
-      "^node_modules/",
       "^.git/",
       "^.zsh_sessions/"
     },
@@ -49,10 +48,14 @@ local find_references = function()
   })
 end
 
+local find_buffers = function()
+  builtin.buffers()
+end
+
 vim.keymap.set('n', '<C-]>', find_files, {})
 vim.keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<C-o>', "<cmd>Telescope workspaces<CR>", {})
 vim.keymap.set('n', '<C-l>', builtin.live_grep, {})
-vim.keymap.set('n', '<C-b>', builtin.buffers, {})
+vim.keymap.set('n', '<C-b>', find_buffers, {})
 vim.keymap.set('n', '<C-f-h>', builtin.help_tags, {})
 vim.keymap.set('n', 'gr', find_references, {})
