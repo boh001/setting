@@ -117,11 +117,18 @@ lspconfig.docker_compose_language_service.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
-lspconfig.clangd.setup({
+lspconfig.jsonls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
-
+lspconfig.tailwindcss.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+lspconfig.prismals.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 -- Diagnostic config
 
 -- Global mappings.

@@ -102,4 +102,13 @@ return {
   'yamatsum/nvim-cursorline',
   'mg979/vim-visual-multi',
   'numToStr/Comment.nvim',
+  'neovim/nvim-lspconfig',
+  {
+
+    'simrat39/rust-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'mfussenegger/nvim-dap',
+    },
+  }
 }

@@ -12,7 +12,8 @@ require("mason-lspconfig").setup({
     'jsonls',
     'bashls',
     'docker_compose_language_service',
-    'clangd',
+    'tailwindcss',
+    'prismals'
   },
   automatic_installation = true
 })
@@ -20,7 +21,6 @@ require("mason-null-ls").setup({
   ensure_installed = {
     "prettier",
     'shellcheck',
-    "clang_format"
   },
   automatic_installation = true
 })
