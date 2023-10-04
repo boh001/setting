@@ -19,7 +19,7 @@ require("mason-lspconfig").setup({
 })
 require("mason-null-ls").setup({
   ensure_installed = {
-    "prettier",
+    "prettierd",
     'shellcheck',
   },
   automatic_installation = true
