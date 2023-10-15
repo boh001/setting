@@ -11,7 +11,11 @@ export GIT_EDITOR=nvim
 ZSH_THEME="af-magic"
 
 eval "$(fnm env --use-on-cd)"
+eval "$(rbenv init - zsh)"
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
