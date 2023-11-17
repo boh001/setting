@@ -119,3 +119,23 @@ fi
 # fnm
 export PATH="/home/kimsanghyeon/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+
+# java
+export JAVA_HOME=/usr/lib/jvm/jdk-17.0.9+9/
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+# lang
+LANG=en_US.UTF-8
+
+# homebrew
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+
+export EDITOR=nvim
+. "$HOME/.cargo/env"
+
+# android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

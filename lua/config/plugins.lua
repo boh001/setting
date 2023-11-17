@@ -110,5 +110,5 @@ return {
       'mfussenegger/nvim-dap',
     },
   },
-'mhartington/formatter.nvim'
+  'mhartington/formatter.nvim',
 }
