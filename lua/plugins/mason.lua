@@ -15,6 +15,8 @@ require("mason-lspconfig").setup({
     'tailwindcss',
     'prismals',
     'clangd',
+    "asm_lsp",
+    "cmake"
   },
   automatic_installation = true
 })
@@ -24,6 +26,9 @@ require("mason-null-ls").setup({
     'shellcheck',
     'clang_format',
     'stylua',
+    'asmfmt',
+    "cmakelang",
+    "cmakelint",
   },
   automatic_installation = true
 })

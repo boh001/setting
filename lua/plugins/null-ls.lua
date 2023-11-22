@@ -5,6 +5,9 @@ null_ls.setup({
 		null_ls.builtins.code_actions.shellcheck,
 		null_ls.builtins.formatting.clang_format,
 		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.asmfmt,
+		null_ls.builtins.diagnostics.cmake_lint,
+		null_ls.builtins.formatting.cmake_format,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
