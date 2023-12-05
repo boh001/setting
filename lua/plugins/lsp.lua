@@ -130,18 +130,6 @@ lspconfig.prismals.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-lspconfig.clangd.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-lspconfig.cmake.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-lspconfig.asm_lsp.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
 -- Diagnostic config
 
 -- Global mappings.
