@@ -6,8 +6,8 @@ require("toggleterm").setup({
 
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-\\>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 'n', '<C-\\>', ':q<CR>', opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-]>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 'n', '<C-]>', ':q<CR>', opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
