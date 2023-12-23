@@ -27,3 +27,5 @@ require('plugins.comment')
 require('plugins.formatter')
 require('plugins.cursorline')
 require('plugins.dap')
+require('plugins.copilot')
+

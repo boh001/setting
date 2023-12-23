@@ -113,4 +113,5 @@ return {
 	"mhartington/formatter.nvim",
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
+  "github/copilot.vim"
 }
