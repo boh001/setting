@@ -113,5 +113,33 @@ return {
 	"mhartington/formatter.nvim",
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
-  "github/copilot.vim"
+	"github/copilot.vim",
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			local home = vim.fn.expand("$HOME")
+			require("chatgpt").setup({
+				api_key_cmd = "cat " .. home .. "/openai_api_key.txt.gpg",
+			})
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 }
