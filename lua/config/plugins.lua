@@ -115,21 +115,6 @@ return {
 	"rcarriga/nvim-dap-ui",
 	"github/copilot.vim",
 	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		config = function()
-			local home = vim.fn.expand("$HOME")
-			require("chatgpt").setup({
-				api_key_cmd = "cat " .. home .. "/openai_api_key.txt.gpg",
-			})
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
-	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
@@ -142,4 +127,6 @@ return {
 			-- refer to the configuration section below
 		},
 	},
+	"robitx/gp.nvim",
+	"gelguy/wilder.nvim",
 }
