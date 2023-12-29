@@ -1,4 +1,4 @@
-# 개발 세팅
+# Setting
 
 ![dashboard](dashboard.png)
 ## Linux
