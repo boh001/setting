@@ -8,7 +8,6 @@
 ## Mac
 
 ### [Iterm2](https://iterm2.com/)
-
 - fontSize: 14
 - font: [NerdFont](https://www.nerdfonts.com/)
 - colorscheme: [tokyonight-storm](https://iterm2colorschemes.com/)
