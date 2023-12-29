@@ -16,7 +16,6 @@
 
 ## [Homebrew](https://brew.sh/index_ko)
 
-
 ## Tmux
 
 ### 설치
