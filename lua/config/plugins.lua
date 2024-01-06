@@ -134,6 +134,5 @@ return {
 			-- refer to the configuration section below
 		},
 	},
-	"robitx/gp.nvim",
 	"gelguy/wilder.nvim",
 }
