@@ -52,6 +52,7 @@ return {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
+		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
@@ -103,36 +104,37 @@ return {
 	},
 	"f-person/git-blame.nvim",
 	"nvim-treesitter/nvim-treesitter",
-	"jiangmiao/auto-pairs",
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {}, -- this is equalent to setup({}) function
+	},
 	"windwp/nvim-ts-autotag",
 	"lukas-reineke/indent-blankline.nvim",
 	"yamatsum/nvim-cursorline",
 	"mg979/vim-visual-multi",
 	"numToStr/Comment.nvim",
 	"neovim/nvim-lspconfig",
-	{
-		"simrat39/rust-tools.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"mfussenegger/nvim-dap",
-		},
-	},
 	"mhartington/formatter.nvim",
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"github/copilot.vim",
 	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+
+		"folke/noice.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
 		},
 	},
-	"gelguy/wilder.nvim",
+	"jackMort/ChatGPT.nvim",
+	event = "VeryLazy",
+	config = function()
+		require("chatgpt").setup()
+	end,
+	dependencies = {
+		"MunifTanjim/nui.nvim",
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope.nvim",
+	},
 }
