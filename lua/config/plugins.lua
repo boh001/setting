@@ -116,8 +116,18 @@ return {
 	"numToStr/Comment.nvim",
 	"neovim/nvim-lspconfig",
 	"mhartington/formatter.nvim",
-	"mfussenegger/nvim-dap",
-	"rcarriga/nvim-dap-ui",
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"mxsdev/nvim-dap-vscode-js",
+			{
+				"microsoft/vscode-js-debug",
+				version = "1.x",
+				build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
+			},
+		},
+	},
 	"github/copilot.vim",
 	{
 
