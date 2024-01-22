@@ -19,7 +19,7 @@ require("dap-vscode-js").setup({
 	-- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 })
 
-local js_based_languages = { "typescript", "javascript", "typescriptreact" }
+local js_based_languages = { "typescript", "javascript", "typescriptreact", "astro" }
 
 for _, language in ipairs(js_based_languages) do
 	require("dap").configurations[language] = {
@@ -41,7 +41,21 @@ for _, language in ipairs(js_based_languages) do
 			type = "pwa-chrome",
 			request = "launch",
 			name = 'Start Chrome with "localhost"',
-			url = "http://localhost:3000",
+			url = function()
+				local co = coroutine.running()
+				return coroutine.create(function()
+					vim.ui.input({
+						prompt = "Enter URL: ",
+						default = "http://localhost:3000",
+					}, function(url)
+						if url == nil or url == "" then
+							return
+						else
+							coroutine.resume(co, url)
+						end
+					end)
+				end)
+			end,
 			webRoot = "${workspaceFolder}",
 			userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
 		},
@@ -62,6 +76,7 @@ end
 
 -- Set keymaps to control the debugger
 vim.keymap.set("n", "<F5>", require("dap").continue)
+vim.keymap.set("n", "<F6>", require("dapui").toggle)
 vim.keymap.set("n", "<F10>", require("dap").step_over)
 vim.keymap.set("n", "<F11>", require("dap").step_into)
 vim.keymap.set("n", "<F12>", require("dap").step_out)
@@ -69,4 +84,3 @@ vim.keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
 vim.keymap.set("n", "<leader>B", function()
 	require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end)
-vim.keymap.set("n", "<leader>ui", require("dapui").toggle)

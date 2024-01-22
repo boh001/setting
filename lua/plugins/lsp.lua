@@ -130,6 +130,10 @@ lspconfig.prismals.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+lspconfig.astro.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 -- Diagnostic config
 
 -- Global mappings.
