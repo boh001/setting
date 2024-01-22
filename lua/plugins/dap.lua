@@ -33,9 +33,9 @@ for _, language in ipairs(js_based_languages) do
 		{
 			type = "pwa-node",
 			request = "attach",
-			name = "Attach",
-			processId = require("dap.utils").pick_process,
-			cwd = "${workspaceFolder}",
+			name = "Auto Attach",
+			cwd = vim.fn.getcwd(),
+			protocol = "inspector",
 		},
 		{
 			type = "pwa-chrome",
