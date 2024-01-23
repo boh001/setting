@@ -134,7 +134,16 @@ return {
 		"folke/noice.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("notify").setup({
+            render = "wrapped-compact",
+            max_width = 80,
+						timeout = 2000,
+					})
+				end,
+			},
 		},
 	},
 }
