@@ -3,6 +3,7 @@ local actions = require("telescope.actions")
 
 telescope.load_extension("workspaces")
 telescope.load_extension("noice")
+telescope.load_extension("fzf")
 
 telescope.setup({
 	theme = "tokyonight",

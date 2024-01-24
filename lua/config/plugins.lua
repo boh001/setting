@@ -55,6 +55,7 @@ return {
 		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", dependencies = { "nvim-telescope/telescope.nvim" } },
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -138,8 +139,8 @@ return {
 				"rcarriga/nvim-notify",
 				config = function()
 					require("notify").setup({
-            render = "wrapped-compact",
-            max_width = 80,
+						render = "wrapped-compact",
+						max_width = 80,
 						timeout = 2000,
 					})
 				end,
