@@ -142,6 +142,7 @@ return {
 						render = "wrapped-compact",
 						max_width = 80,
 						timeout = 2000,
+						top_down = false,
 					})
 				end,
 			},
