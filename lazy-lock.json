@@ -51,5 +51,6 @@
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "vim-visual-multi": { "branch": "master", "commit": "e67f7fa011c98fc5426352d3bb06362a0f70af3c" },
   "vscode-js-debug": { "branch": "main", "commit": "d006ab04a678178301eaed0e4c79f023b8fb1936" },
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "workspaces.nvim": { "branch": "master", "commit": "d6e0bd7e11790790e07dc9d8d353144c8b4edfb8" }
 }
