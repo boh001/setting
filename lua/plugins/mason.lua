@@ -14,7 +14,7 @@ require("mason-lspconfig").setup({
 		"docker_compose_language_service",
 		"tailwindcss",
 		"prismals",
-		"rubly_ls",
+		"ruby_ls",
 		"gradle_ls",
 	},
 	automatic_installation = true,
