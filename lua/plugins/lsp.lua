@@ -118,6 +118,17 @@ lspconfig.docker_compose_language_service.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+
+function docker_fix()
+    local filename = vim.fn.expand("%:t")
+
+    if filename == "docker-compose.yaml" then
+        vim.bo.filetype = "yaml.docker-compose"
+    end
+end
+
+vim.cmd[[au BufRead * lua docker_fix()]]
+
 lspconfig.jsonls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -130,7 +141,13 @@ lspconfig.prismals.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-lspconfig.astro.setup({
+lspconfig.ruby_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+vim.cmd('autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby')
+
+lspconfig.gradle_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
