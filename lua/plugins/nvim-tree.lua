@@ -35,7 +35,7 @@ require("nvim-tree").setup({
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,
 	update_focused_file = {
-		enable = true,
+		enable = false,
 		update_root = true,
 	},
 
@@ -46,6 +46,10 @@ require("nvim-tree").setup({
 	filters = {
 		git_ignored = false,
 		dotfiles = false,
+	},
+
+	git = {
+		enable = false,
 	},
 })
 
