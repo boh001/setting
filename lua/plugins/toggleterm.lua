@@ -14,7 +14,7 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, count = 5 })
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, count = 6 })
 
 function _lazygit_toggle()
   lazygit:toggle()
@@ -25,3 +25,4 @@ vim.keymap.set("n", "<leader>1", ":1ToggleTerm<CR>", {noremap = true, silent = t
 vim.keymap.set("n", "<leader>2", ":2ToggleTerm<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>3", ":3ToggleTerm<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>4", ":4ToggleTerm<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>5", ":5ToggleTerm<CR>", {noremap = true, silent = true})
