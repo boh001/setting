@@ -42,24 +42,38 @@ local builtin = require("telescope.builtin")
 
 local find_files = function()
 	builtin.find_files({
+		cwd = vim.fn.expand("%:p:h"),
 		hidden = true,
+	})
+end
+
+local find_word_in_file = function()
+	builtin.current_buffer_fuzzy_find({
+		cwd = vim.fn.expand("%:p:h"),
+	})
+end
+
+local find_word = function()
+	builtin.live_grep({
+		cwd = vim.fn.expand("%:p:h"),
 	})
 end
 
 local find_references = function()
 	builtin.lsp_references({
+		cwd = vim.fn.expand("%:p:h"),
 		show_line = false,
 	})
 end
 
 local find_buffers = function()
-	builtin.buffers()
+	builtin.buffers({})
 end
 
 vim.keymap.set("n", "<C-p>", find_files, {})
-vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set("n", "<C-f>", find_word_in_file, {})
 vim.keymap.set("n", "<C-o>", "<cmd>Telescope workspaces<CR>", {})
-vim.keymap.set("n", "<C-l>", builtin.live_grep, {})
+vim.keymap.set("n", "<C-l>", find_word, {})
 vim.keymap.set("n", "<C-b>", find_buffers, {})
 vim.keymap.set("n", "<C-f-h>", builtin.help_tags, {})
 vim.keymap.set("n", "gr", find_references, {})
