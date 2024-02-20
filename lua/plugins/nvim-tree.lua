@@ -51,6 +51,11 @@ require("nvim-tree").setup({
 	git = {
 		enable = false,
 	},
+  filesystem_watchers = {
+    enable = true,
+    debounce_delay = 50,
+    ignore_dirs = {"node_modules"},
+  },
 })
 
 vim.keymap.set("n", "<C-t>", "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>", { noremap = true, silent = true })
