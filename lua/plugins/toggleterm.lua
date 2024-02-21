@@ -21,8 +21,8 @@ function _lazygit_toggle()
 end
 
 vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>1", ":1ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>2", ":2ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>3", ":3ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>4", ":4ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>5", ":5ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>1", ":1ToggleTerm<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>2", ":2ToggleTerm<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>3", ":3ToggleTerm<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>4", ":4ToggleTerm<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>5", ":5ToggleTerm<CR>", { noremap = true, silent = true })
