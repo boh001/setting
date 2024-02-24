@@ -42,26 +42,22 @@ local builtin = require("telescope.builtin")
 
 local find_files = function()
 	builtin.find_files({
-		cwd = vim.fn.expand("%:p:h"),
 		hidden = true,
 	})
 end
 
 local find_word_in_file = function()
 	builtin.current_buffer_fuzzy_find({
-		cwd = vim.fn.expand("%:p:h"),
 	})
 end
 
 local find_word = function()
 	builtin.live_grep({
-		cwd = vim.fn.expand("%:p:h"),
 	})
 end
 
 local find_references = function()
 	builtin.lsp_references({
-		cwd = vim.fn.expand("%:p:h"),
 		show_line = false,
 	})
 end
