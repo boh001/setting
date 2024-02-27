@@ -40,12 +40,6 @@ telescope.setup({
 
 local builtin = require("telescope.builtin")
 
-local find_files = function()
-	builtin.find_files({
-		hidden = true,
-	})
-end
-
 local find_word_in_file = function()
 	builtin.current_buffer_fuzzy_find({
 	})
@@ -66,7 +60,7 @@ local find_buffers = function()
 	builtin.buffers({})
 end
 
-vim.keymap.set("n", "<C-p>", find_files, {})
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", {})
 vim.keymap.set("n", "<C-f>", find_word_in_file, {})
 vim.keymap.set("n", "<C-o>", "<cmd>Telescope workspaces<CR>", {})
 vim.keymap.set("n", "<C-l>", find_word, {})

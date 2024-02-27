@@ -2,7 +2,7 @@ local workspaces = require("workspaces")
 workspaces.setup({
   sort = false,
   hooks = {
-    open = { "Telescope find_files" }
+    open = { "Telescope find_files hidden=true" }
   }
 })
 
