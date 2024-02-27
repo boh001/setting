@@ -1,9 +1,6 @@
 # Setting
 
 ![dashboard](dashboard.png)
-## Linux
-### [Gogh](https://github.com/Gogh-Co/Gogh)
-### [Oh-my-bash] 
 
 ## Mac
 
