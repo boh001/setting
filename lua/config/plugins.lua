@@ -122,6 +122,7 @@ return {
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"mxsdev/nvim-dap-vscode-js",
+      { "nvim-neotest/nvim-nio" },
 			{
 				"microsoft/vscode-js-debug",
 				version = "1.x",
@@ -169,6 +170,18 @@ return {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
+		},
+		{
+			"CopilotC-Nvim/CopilotChat.nvim",
+			branch = "canary",
+			dependencies = {
+				{ "github/copilot.vim" },
+				{ "nvim-lua/plenary.nvim" },
+			},
+			opts = {
+				-- See Configuration section for rest
+			},
+			-- See Commands section for default commands if you want to lazy load on them
 		},
 	},
 }
