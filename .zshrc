@@ -27,3 +27,6 @@ eval "$(rbenv init - zsh)"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# postgresql
+PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
