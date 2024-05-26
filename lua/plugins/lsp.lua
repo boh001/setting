@@ -141,12 +141,6 @@ lspconfig.prismals.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-lspconfig.ruby_lsp.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-vim.cmd('autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby')
-
 lspconfig.gradle_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

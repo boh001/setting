@@ -15,7 +15,6 @@ require("mason-lspconfig").setup({
 		"tailwindcss",
 		"prismals",
 		"gradle_ls",
-    "ruby_lsp"
 	},
 	automatic_installation = true,
 })
