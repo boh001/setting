@@ -36,6 +36,7 @@ return {
         "bashls",
         "docker_compose_language_service",
         "tailwindcss",
+        "groovyls"
       },
       automatic_installation = true,
     })
@@ -180,6 +181,19 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    lspconfig.groovyls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+    function jenkinsfile_fix()
+      local filename = vim.fn.expand("%:t")
+
+      if filename == "Jenkinsfile" then
+        vim.bo.filetype = "groovy"
+      end
+    end
+
+    vim.cmd [[au BufRead * lua jenkinsfile_fix()]]
 
     -- Diagnostic config
 
