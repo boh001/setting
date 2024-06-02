@@ -1,7 +1,5 @@
 # Setting
 
-![dashboard](dashboard.png)
-
 ## Mac
 
 ### [Iterm2](https://iterm2.com/)
