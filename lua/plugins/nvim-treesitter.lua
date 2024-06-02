@@ -17,7 +17,10 @@ return {
         "regex",
         "markdown",
         "markdown_inline",
-        "sql"
+        "sql",
+        "hcl",
+        "vimdoc",
+        "vim", "yaml", "toml"
       },
       sync_install = false,
       auto_install = true,

@@ -16,7 +16,8 @@ return {
     {
       "L3MON4D3/LuaSnip",
       build = "make install_jsregexp"
-    }
+    },
+    "ckipp01/nvim-jenkinsfile-linter"
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -185,16 +186,6 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    function jenkinsfile_fix()
-      local filename = vim.fn.expand("%:t")
-
-      if filename == "Jenkinsfile" then
-        vim.bo.filetype = "groovy"
-      end
-    end
-
-    vim.cmd [[au BufRead * lua jenkinsfile_fix()]]
-
     -- Diagnostic config
 
     -- Global mappings.
