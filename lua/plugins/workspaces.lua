@@ -1,14 +1,24 @@
-local workspaces = require("workspaces")
-workspaces.setup({
-  sort = false,
-  hooks = {
-    open = { "Telescope find_files hidden=true" }
-  }
-})
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    vim.cmd([[WorkspacesSyncDir]])
+return {
+  "natecraddock/workspaces.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
+  config = function()
+    require("workspaces").setup({
+      workspaces = {
+        {
+          name = "nvim",
+          path = "~/.config/nvim"
+        },
+        {
+          name = "projects",
+          path = "~/projects"
+        },
+      },
+      sort = false,
+      hooks = {
+        open = { "Telescope find_files hidden=true" }
+      }
+    })
   end
-})
+}

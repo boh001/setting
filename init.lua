@@ -1,33 +1,14 @@
---Neovim init file
+if vim.fn.has("nvim-0.9") == 0 then
+	vim.api.nvim_echo({
+		{ "Requires Neovim >= 0.9.0\n", "ErrorMsg" },
+		{ "Press any key to exit", "MoreMsg" },
+	}, true, {})
+	vim.fn.getchar()
+	vim.cmd.quit()
+end
 
 -- config
-require("config.keymappings")
+require("config.keymaps")
 require("config.options")
 require("config.colorscheme")
 require("config.lazy")
-
--- plugins
-require("plugins.alpha")
-require("plugins.nvim-tree")
-require("plugins.lsp")
-require("plugins.mason")
-require("plugins.lualine")
-require("plugins.telescope")
-require("plugins.bufferline")
-require("plugins.workspaces")
-require("plugins.null-ls")
-require("plugins.toggleterm")
-require("plugins.colorizer")
-require("plugins.trouble")
-require("plugins.gitblame")
-require("plugins.treesitter")
-require("plugins.blankline")
-require("plugins.comment")
-require("plugins.formatter")
-require("plugins.cursorline")
-require("plugins.dap")
-require("plugins.copilot")
-require("plugins.noice")
-require("plugins.cmp")
-require("plugins.smart-splits")
-require("plugins.todo")
