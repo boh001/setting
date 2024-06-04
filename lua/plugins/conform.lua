@@ -16,7 +16,10 @@ return {
   config = function()
     require("conform").setup({
       lua = { "stylua" },
+      typescript = { { "prettierd", "prettier" } },
+      typescriptreact = { { "prettierd", "prettier" } },
       javascript = { { "prettierd", "prettier" } },
+      javascriptreact = { { "prettierd", "prettier" } },
       ["*"] = { "codespell" },
     })
   end,
