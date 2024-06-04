@@ -30,3 +30,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # postgresql
 PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# openjdk
+PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
