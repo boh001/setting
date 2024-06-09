@@ -9,18 +9,20 @@ return {
       function()
         require("conform").format({ async = true, lsp_fallback = true })
       end,
-      mode = "",
+      mode = "n",
       desc = "Format buffer",
     },
   },
   config = function()
     require("conform").setup({
-      lua = { "stylua" },
-      typescript = { { "prettierd", "prettier" } },
-      typescriptreact = { { "prettierd", "prettier" } },
-      javascript = { { "prettierd", "prettier" } },
-      javascriptreact = { { "prettierd", "prettier" } },
-      ["*"] = { "codespell" },
+      formatters_by_ft = {
+        lua = { "stylua" },
+        typescript = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
+        javascript = { { "prettierd", "prettier" } },
+        javascriptreact = { { "prettierd", "prettier" } },
+        ["*"] = { "codespell" },
+      }
     })
   end,
 }
