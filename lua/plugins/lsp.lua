@@ -19,40 +19,12 @@ return {
     { "folke/neodev.nvim", opts = {} },
     {
       "L3MON4D3/LuaSnip",
-      build = "make install_jsregexp"
+      build = "make install_jsregexp",
     },
-    "ckipp01/nvim-jenkinsfile-linter"
+    "ckipp01/nvim-jenkinsfile-linter",
   },
   config = function()
     local lspconfig = require("lspconfig")
-
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "lua_ls",
-        "cssls",
-        "eslint",
-        "html",
-        "tsserver",
-        "marksman",
-        "dockerls",
-        "terraformls",
-        "jsonls",
-        "bashls",
-        "docker_compose_language_service",
-        "tailwindcss",
-        "groovyls"
-      },
-      automatic_installation = true,
-    })
-    require("mason-null-ls").setup({
-      ensure_installed = {
-        "shellcheck",
-        "stylua",
-        "prettierd",
-      },
-      automatic_installation = true,
-    })
 
     local cmp = require("cmp")
     local luasnip = require("luasnip")
@@ -65,7 +37,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
+        ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -78,7 +50,7 @@ return {
       }),
       sources = {
         { name = "nvim_lsp" },
-        { name = 'luasnip' }
+        { name = "luasnip" },
       },
     })
 
@@ -128,46 +100,42 @@ return {
       })
     end
 
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    local lsps = {
+      "lua_ls",
+      "cssls",
+      "eslint",
+      "html",
+      "tsserver",
+      "marksman",
+      "dockerls",
+      "terraformls",
+      "jsonls",
+      "bashls",
+      "docker_compose_language_service",
+      "tailwindcss",
+      "groovyls",
+    }
+
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+      ensure_installed = lsps,
+      automatic_installation = true,
     })
-    lspconfig.cssls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    require("mason-null-ls").setup({
+      ensure_installed = {
+        "shellcheck",
+        "stylua",
+        "prettierd",
+      },
+      automatic_installation = true,
     })
-    lspconfig.html.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.eslint.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.tsserver.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.marksman.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.terraformls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.dockerls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.bashls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.docker_compose_language_service.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+
+    for _, lsp in ipairs(lsps) do
+      lspconfig[lsp].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+    end
 
     function docker_compose_fix()
       local filename = vim.fn.expand("%:t")
@@ -177,22 +145,9 @@ return {
       end
     end
 
-    vim.cmd [[au BufRead * lua docker_compose_fix()]]
+    vim.cmd([[au BufRead * lua docker_compose_fix()]])
 
-    lspconfig.jsonls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.tailwindcss.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig.groovyls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
     -- Diagnostic config
-
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -322,7 +277,8 @@ return {
 
     local icons = require("config.icons")
 
-    local signs = { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
+    local signs =
+      { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
 
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -338,5 +294,5 @@ return {
     ]])
 
     vim.o.updatetime = 500
-  end
+  end,
 }
