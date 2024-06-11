@@ -10,7 +10,7 @@ return {
     telescope.setup(
       {
 
-        theme = "cyberdream",
+        theme = "tokyonight",
         defaults = {
           layout_strategy = "horizontal",
           sorting_strategy = "ascending",

@@ -10,25 +10,6 @@ gui:
   language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko' | 'ru'
   timeFormat: '02 Jan 06' # https://pkg.go.dev/time#Time.Format
   shortTimeFormat: '3:04PM'
-  theme:
-    activeBorderColor:
-        - "#5ef1ff"
-    inactiveBorderColor:
-        - "#7b8496"
-    searchingActiveBorderColor:
-        - "#ff5ef1"
-    optionsTextColor:
-        - "#3c4048"
-    selectedLineBgColor:
-        - "#3c4048"
-    cherryPickedCommitBgColor:
-        - "#3c4048"
-    cherryPickedCommitFgColor:
-        - "#ff5ea0"
-    unstagedChangesColor:
-        - "#ffbd5e"
-    defaultFgColor:
-        - "#ffffff"
   commitLength:
     show: true
   mouseEvents: true
