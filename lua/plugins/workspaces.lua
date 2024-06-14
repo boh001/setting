@@ -8,17 +8,23 @@ return {
       workspaces = {
         {
           name = "nvim",
-          path = "~/.config/nvim"
+          path = "~/.config/nvim",
         },
         {
           name = "projects",
-          path = "~/projects"
+          path = "~/projects",
         },
       },
       sort = false,
       hooks = {
-        open = { "Telescope find_files hidden=true" }
-      }
+        open = { "Telescope find_files hidden=true" },
+      },
     })
-  end
+    vim.api.nvim_create_autocmd("VimEnter", {
+      pattern = "*",
+      callback = function()
+        vim.cmd([[WorkspacesSyncDir]])
+      end,
+    })
+  end,
 }
