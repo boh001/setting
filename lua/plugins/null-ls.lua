@@ -15,7 +15,6 @@ return {
         "stylua",
         "codespell",
         "prettierd",
-        "eslint_d",
       },
       automatic_installation = true,
     })
