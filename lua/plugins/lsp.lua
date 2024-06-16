@@ -7,13 +7,6 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
-    {
-      "jay-babu/mason-null-ls.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-      dependencies = {
-        "nvimtools/none-ls.nvim",
-      },
-    },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     { "folke/neodev.nvim", opts = {} },
@@ -21,7 +14,6 @@ return {
       "L3MON4D3/LuaSnip",
       build = "make install_jsregexp",
     },
-    "ckipp01/nvim-jenkinsfile-linter",
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -103,7 +95,6 @@ return {
     local lsps = {
       "lua_ls",
       "cssls",
-      "eslint",
       "html",
       "tsserver",
       "marksman",
@@ -121,15 +112,6 @@ return {
       ensure_installed = lsps,
       automatic_installation = true,
     })
-    require("mason-null-ls").setup({
-      ensure_installed = {
-        "shellcheck",
-        "stylua",
-        "prettierd",
-      },
-      automatic_installation = true,
-    })
-
     for _, lsp in ipairs(lsps) do
       lspconfig[lsp].setup({
         capabilities = capabilities,
@@ -218,7 +200,7 @@ return {
         "init_conversion_failed",
       },
       undeclared_variable = {
-        message = " Have you delcared that variable somewhere?",
+        message = " Have you declared that variable somewhere?",
         "undeclared_var_use",
       },
       lowercase_global = {
