@@ -24,18 +24,19 @@ return {
 
     null_ls.setup({
       sources = {
-        -- any filetype
-        null_ls.builtins.formatting.codespell,
         -- lua
         null_ls.builtins.formatting.stylua,
         -- sh
         require("none-ls-shellcheck.diagnostics"),
         require("none-ls-shellcheck.code_actions"),
         -- typescript
-        require("none-ls.diagnostics.eslint_d"),
+        -- require("none-ls.diagnostics.eslint_d"),
         require("none-ls.code_actions.eslint_d"),
+        null_ls.builtins.formatting.prettierd,
         -- terraform
         null_ls.builtins.formatting.terraform_fmt,
+        -- any filetype
+        null_ls.builtins.formatting.codespell,
       },
     })
 

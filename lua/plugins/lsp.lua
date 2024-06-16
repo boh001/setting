@@ -29,7 +29,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-        ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -87,6 +87,7 @@ return {
             prefix = " ",
             scope = "cursor",
           }
+
           vim.diagnostic.open_float(nil, opts)
         end,
       })
@@ -96,6 +97,7 @@ return {
       "lua_ls",
       "cssls",
       "html",
+      "eslint",
       "tsserver",
       "marksman",
       "dockerls",
@@ -260,7 +262,7 @@ return {
     local icons = require("config.icons")
 
     local signs =
-      { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
+    { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
 
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
