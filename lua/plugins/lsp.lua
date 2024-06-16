@@ -142,30 +142,31 @@ return {
       update_in_insert = true,
     })
 
+    local icons = require("config.icons")
+
     local codes = {
       -- Lua
       no_matching_function = {
-        message = " Can't find a matching function",
+        message = "Can't find a matching function",
         "redundant-parameter",
         "ovl_no_viable_function_in_call",
       },
       empty_block = {
-        message = " That shouldn't be empty here",
+        message = "That shouldn't be empty here",
         "empty-block",
       },
       missing_symbol = {
-        message = " Here should be a symbol",
+        message = "Here should be a symbol",
         "miss-symbol",
       },
       expected_semi_colon = {
-        message = " Please put the `;` or `,`",
+        message = "Please put the `;` or `,`",
         "expected_semi_declaration",
         "miss-sep-in-table",
         "invalid_token_after_toplevel_declarator",
       },
       redefinition = {
-        message = " That variable was defined before",
-        icon = " ",
+        message = "That variable was defined before",
         "redefinition",
         "redefined-local",
         "no-duplicate-imports",
@@ -173,40 +174,39 @@ return {
         "import/no-duplicates",
       },
       no_matching_variable = {
-        message = " Can't find that variable",
+        message = "Can't find that variable",
         "undefined-global",
         "reportUndefinedVariable",
       },
       trailing_whitespace = {
-        message = "  Whitespaces are useless",
+        message = "Whitespaces are useless",
         "trailing-whitespace",
         "trailing-space",
       },
       unused_variable = {
-        message = "  Don't define variables you don't use",
-        icon = "  ",
+        message = "Don't define variables you don't use",
         "unused-local",
         "@typescript-eslint/no-unused-vars",
         "no-unused-vars",
       },
       unused_function = {
-        message = "  Don't define functions you don't use",
+        message = "Don't define functions you don't use",
         "unused-function",
       },
       useless_symbols = {
-        message = " Remove that useless symbols",
+        message = "Remove that useless symbols",
         "unknown-symbol",
       },
       wrong_type = {
-        message = " Try to use the correct types",
+        message = "Try to use the correct types",
         "init_conversion_failed",
       },
       undeclared_variable = {
-        message = " Have you declared that variable somewhere?",
+        message = "Have you declared that variable somewhere?",
         "undeclared_var_use",
       },
       lowercase_global = {
-        message = " Should that be a global? (if so make it uppercase)",
+        message = "Should that be a global? (if so make it uppercase)",
         "lowercase-global",
       },
       -- Typescript
@@ -230,10 +230,10 @@ return {
       float = {
         source = false,
         format = function(diagnostic)
-          local code = diagnostic and diagnostic.user_data and diagnostic.user_data.lsp.code
+          --[[ local code = diagnostic and diagnostic.user_data and diagnostic.user_data.lsp.code
 
           if not diagnostic.source or not code then
-            return string.format("%s", diagnostic.message)
+            return string.format("%s", icons.pencile .. diagnostic.message)
           end
 
           if diagnostic.source == "eslint" then
@@ -251,15 +251,13 @@ return {
               return table.message
             end
           end
-
-          return string.format("%s [%s]", diagnostic.message, diagnostic.source)
+]]
+          return string.format("%s [%s]", icons.pencil .. diagnostic.message, diagnostic.source)
         end,
       },
     })
 
     -- UI
-
-    local icons = require("config.icons")
 
     local signs =
     { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
