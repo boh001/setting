@@ -34,6 +34,8 @@ return {
         null_ls.builtins.formatting.prettierd,
         -- terraform
         null_ls.builtins.formatting.terraform_fmt,
+        --xml
+        null_ls.builtins.formatting.xmllint,
         -- any filetype
         null_ls.builtins.formatting.codespell,
       },
