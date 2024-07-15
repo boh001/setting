@@ -33,3 +33,6 @@ PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # openjdk
 PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+# Created by `pipx` on 2024-07-15 04:29:50
+export PATH="$PATH:/Users/gimsanghyeon/.local/bin"
