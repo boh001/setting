@@ -17,6 +17,7 @@ return {
         "prettierd",
       },
       automatic_installation = true,
+      debug = true,
     })
 
     local null_ls = require("null-ls")
