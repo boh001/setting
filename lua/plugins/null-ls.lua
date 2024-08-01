@@ -29,6 +29,9 @@ return {
         -- sh
         require("none-ls-shellcheck.diagnostics"),
         require("none-ls-shellcheck.code_actions"),
+        require("none-ls-shellcheck.code_actions"),
+        -- groovy
+        null_ls.builtins.formatting.npm_groovy_lint,
         -- typescript
         -- require("none-ls.diagnostics.eslint_d"),
         require("none-ls.code_actions.eslint_d"),

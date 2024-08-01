@@ -29,7 +29,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
+        ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -94,30 +94,60 @@ return {
     end
 
     local lsps = {
-      "lua_ls",
-      "cssls",
-      "html",
-      "eslint",
-      "tsserver",
-      "marksman",
-      "dockerls",
-      "terraformls",
-      "jsonls",
-      "bashls",
-      "docker_compose_language_service",
-      "tailwindcss",
-      "groovyls",
+      {
+        name = "lua_ls",
+      },
+      {
+        name = "cssls",
+      },
+      {
+        name = "html",
+      },
+      {
+        name = "eslint",
+      },
+      {
+        name = "tsserver",
+      },
+      {
+        name = "marksman",
+      },
+      {
+        name = "dockerls",
+      },
+      {
+        name = "terraformls",
+      },
+      {
+        name = "jsonls",
+      },
+      {
+        name = "bashls",
+      },
+      {
+        name = "docker_compose_language_service",
+      },
+      {
+        name = "groovyls",
+        cmd = { "java", "-jar", "/Users/gimsanghyeon/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar" },
+      },
     }
+
+    local lsp_names = {}
+    for _, lsp in ipairs(lsps) do
+      table.insert(lsp_names, lsp.name)
+    end
 
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = lsps,
+      ensure_installed = lsp_names,
       automatic_installation = true,
     })
     for _, lsp in ipairs(lsps) do
-      lspconfig[lsp].setup({
+      lspconfig[lsp.name].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        cmd = lsp.cmd
       })
     end
 
@@ -130,6 +160,9 @@ return {
     end
 
     vim.cmd([[au BufRead * lua docker_compose_fix()]])
+    vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]])
+    vim.cmd([[au BufNewFile,BufRead *.Jenkinsfile setf groovy]])
+    
 
     -- Diagnostic config
     -- Global mappings.
@@ -260,7 +293,7 @@ return {
     -- UI
 
     local signs =
-    { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
+      { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
 
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
