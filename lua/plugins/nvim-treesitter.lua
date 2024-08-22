@@ -23,7 +23,8 @@ return {
         "vim",
         "yaml",
         "toml",
-        "query"
+        "query",
+        "rust"
       },
       sync_install = false,
       auto_install = true,

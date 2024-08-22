@@ -35,7 +35,10 @@ PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 # Created by `pipx` on 2024-07-15 04:29:50
-export PATH="$PATH:/Users/gimsanghyeon/.local/bin"
+export PATH="$PATH:~/.local/bin"
 
-# Created by `pipx` on 2024-07-16 11:42:23
-export PATH="$PATH:/Users/sanghyeon/.local/bin"
+# solana
+export PATH="/Users/sanghyeon/.local/share/solana/install/active_release/bin:$PATH"
+
+#nvim
+export PATH="$HOME/.local/share/bob/v0.10.1/nvim-macos-arm64/bin:$PATH"

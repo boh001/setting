@@ -15,6 +15,7 @@ return {
         "stylua",
         "codespell",
         "prettierd",
+        "rustfmt",
       },
       automatic_installation = true,
       debug = true,
@@ -36,6 +37,11 @@ return {
         -- require("none-ls.diagnostics.eslint_d"),
         require("none-ls.code_actions.eslint_d"),
         null_ls.builtins.formatting.prettierd,
+        -- rust
+        require("none-ls.formatting.rustfmt"),
+        -- golang
+        null_ls.builtins.formatting.goimports_revise,
+        null_ls.builtins.diagnostics.golangci_lint,
         -- terraform
         null_ls.builtins.formatting.terraform_fmt,
         --xml

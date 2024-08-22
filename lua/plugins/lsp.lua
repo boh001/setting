@@ -29,7 +29,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-        ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -110,6 +110,9 @@ return {
         name = "tsserver",
       },
       {
+        name = "tailwindcss",
+      },
+      {
         name = "marksman",
       },
       {
@@ -128,8 +131,18 @@ return {
         name = "docker_compose_language_service",
       },
       {
+        name = "rust_analyzer",
+      },
+      {
+        name = "gopls",
+      },
+      {
         name = "groovyls",
-        cmd = { "java", "-jar", "/Users/gimsanghyeon/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar" },
+        cmd = {
+          "java",
+          "-jar",
+          "/Users/gimsanghyeon/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar",
+        },
       },
     }
 
@@ -143,11 +156,16 @@ return {
       ensure_installed = lsp_names,
       automatic_installation = true,
     })
+
     for _, lsp in ipairs(lsps) do
+      if lsp.name == "tailwindcss" then
+        break
+      end
+
       lspconfig[lsp.name].setup({
         capabilities = capabilities,
         on_attach = on_attach,
-        cmd = lsp.cmd
+        cmd = lsp.cmd,
       })
     end
 
@@ -162,7 +180,6 @@ return {
     vim.cmd([[au BufRead * lua docker_compose_fix()]])
     vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]])
     vim.cmd([[au BufNewFile,BufRead *.Jenkinsfile setf groovy]])
-    
 
     -- Diagnostic config
     -- Global mappings.
@@ -293,7 +310,7 @@ return {
     -- UI
 
     local signs =
-      { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
+    { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
 
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
