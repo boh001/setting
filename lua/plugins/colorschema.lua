@@ -38,11 +38,8 @@ return {
         overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
           return {
             Comment = { fg = colors.grey, bg = "NONE", italic = true },
-            LineNrAbove = { fg = colors.red },
             LineNr = { fg = colors.grey },
-            LineNrBelow = { fg = colors.yellow },
             GitSignsCurrentLineBlame = { fg = colors.cyan },
-            String = { fg = "#5ea1ff" },
           }
         end,
 

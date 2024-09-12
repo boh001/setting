@@ -6,15 +6,17 @@ return {
     local dashboard = require("alpha.themes.dashboard")
 
     -- ╭──────────────────────────────────────────────────────────╮
-    -- │ Headder                                                  │
+    -- │ Header                                                  │
     -- ╰──────────────────────────────────────────────────────────╯
     local header = {
-      "██╗  ██╗  ███████╗  ██╗       ██╗        ██████╗ ",
-      "██║  ██║  ██╔════╝  ██║       ██║       ██╔═══██╗",
-      "███████║  █████╗    ██║       ██║       ██║   ██║",
-      "██╔══██║  ██╔══╝    ██║       ██║       ██║   ██║",
-      "██║  ██║  ███████╗  ███████╗  ███████╗  ╚██████╔╝",
-      "╚═╝  ╚═╝  ╚══════╝  ╚══════╝  ╚══════╝   ╚═════╝ ",
+      "                                                     ",
+      "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+      "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+      "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+      "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+      "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+      "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+      "                                                     ",
     }
     dashboard.section.header.type = "text"
     dashboard.section.header.val = header
@@ -26,8 +28,9 @@ return {
     -- ╭──────────────────────────────────────────────────────────╮
     -- │ Section                                                  │
     -- ╰──────────────────────────────────────────────────────────╯
-    local thingy =
-        io.popen('echo "$(LANG=en_us_88591; date +%a) $(date +%d) $(LANG=en_us_88591; date +%b)" | tr -d "\n"')
+    local thingy = io.popen(
+      'echo "$(LANG=en_us_88591; date +%a) $(date +%d) $(LANG=en_us_88591; date +%b)" | tr -d "\n"'
+    )
     if thingy == nil then
       return
     end
@@ -68,56 +71,6 @@ return {
     }
 
     -- ╭──────────────────────────────────────────────────────────╮
-    -- │ Button                                                   │
-    -- ╰──────────────────────────────────────────────────────────╯
-    local icons = require("config.icons")
-
-    local leader = ","
-
-    --- @param sc string
-    --- @param txt string
-    --- @param keybind string optional
-    --- @param keybind_opts table optional
-    local function button(sc, txt, keybind, keybind_opts)
-      local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
-
-      local opts = {
-        position = "center",
-        shortcut = sc,
-        cursor = 5,
-        width = 50,
-        align_shortcut = "right",
-        hl_shortcut = "EcovimPrimary",
-      }
-      if keybind then
-        keybind_opts = vim.F.if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
-        opts.keymap = { "n", sc_, keybind, keybind_opts }
-      end
-
-      local function on_press()
-        -- local key = vim.api.nvim_replace_termcodes(keybind .. "<Ignore>", true, false, true)
-        local key = vim.api.nvim_replace_termcodes(sc_ .. "<Ignore>", true, false, true)
-        vim.api.nvim_feedkeys(key, "t", false)
-      end
-
-      return {
-        type = "button",
-        val = txt,
-        on_press = on_press,
-        opts = opts,
-      }
-    end
-
-    dashboard.section.buttons.val = {
-      button("<C-o>", icons.fileNoBg .. " " .. "Find Project", "<cmd>Telescope workspaces<CR>", {}),
-      button("<C-]>", icons.fileNoBg .. " " .. "Find File", "<cmd>Telescope find_files hidden=true<CR>", {}),
-      button("<leader>l", icons.container .. " " .. "Manage Plugins", "<cmd>Lazy<CR>", {}),
-      button("<leader>n", icons.cog .. " " .. "Settings", "<cmd>e $MYVIMRC<CR>", {}),
-      button("-", icons.exit .. " " .. "Exit", "<cmd>exit<CR>", {}),
-    }
-
-
-    -- ╭──────────────────────────────────────────────────────────╮
     -- │ Footer                                                   │
     -- ╰──────────────────────────────────────────────────────────╯
     local function footer()
@@ -141,9 +94,7 @@ return {
         top_section,
         middle_section,
         bottom_section,
-        { type = "padding", val = 2 },
-        dashboard.section.buttons,
-        { type = "padding", val = 3 },
+        { type = "padding", val = 1 },
         dashboard.section.footer,
       },
       opts = {
