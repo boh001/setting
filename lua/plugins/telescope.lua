@@ -1,47 +1,53 @@
 return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.6",
-  dependencies = { "nvim-lua/plenary.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = function()
     local telescope = require("telescope")
 
-    telescope.setup(
-      {
+    telescope.setup({
 
-        theme = "tokyonight",
-        defaults = {
-          layout_strategy = "horizontal",
-          sorting_strategy = "ascending",
-          layout_config = {
-            width = 0.6,
-            height = 0.6,
-            prompt_position = "top",
-          },
-          file_ignore_patterns = {
-            "^.git/",
-            "^.zsh_sessions/",
-          },
-          mappings = {
-            n = {
-              ["<c-d>"] = require("telescope.actions").delete_buffer,
-            },
-            i = {
-              ["<c-d>"] = require("telescope.actions").delete_buffer,
-            },
-          },
-          find_command = { "fd", "-t=f", "-a" },
-          path_display = { "absolute" },
-          wrap_results = true,
+      theme = "tokyonight",
+      defaults = {
+        layout_strategy = "horizontal",
+        sorting_strategy = "ascending",
+        layout_config = {
+          width = 0.6,
+          height = 0.6,
+          prompt_position = "top",
         },
-        extensions = {
-          workspaces = {
-            keep_insert = true,
+        file_ignore_patterns = {
+          "^.git/",
+          "^.zsh_sessions/",
+        },
+        mappings = {
+          n = {
+            ["<c-d>"] = require("telescope.actions").delete_buffer,
+          },
+          i = {
+            ["<c-d>"] = require("telescope.actions").delete_buffer,
           },
         },
-      }
-    )
+        find_command = { "fd", "-t=f", "-a" },
+        path_display = { "absolute" },
+        wrap_results = true,
+      },
+      extensions = {
+        workspaces = {
+          keep_insert = true,
+        },
+        fzf = {
+          fuzzy = false,                   -- false will only do exact matching
+          override_generic_sorter = true, -- override the generic sorter
+          override_file_sorter = true,    -- override the file sorter
+          case_mode = "ignore_case",       -- or "ignore_case" or "respect_case"
+          -- the default case_mode is "smart_case"
+        },
+      },
+    })
 
     telescope.load_extension("workspaces")
     telescope.load_extension("noice")
@@ -50,13 +56,11 @@ return {
     local builtin = require("telescope.builtin")
 
     local find_word_in_file = function()
-      builtin.current_buffer_fuzzy_find({
-      })
+      builtin.current_buffer_fuzzy_find({})
     end
 
     local find_word = function()
-      builtin.live_grep({
-      })
+      builtin.live_grep({})
     end
 
     local find_references = function()
@@ -76,5 +80,5 @@ return {
     vim.keymap.set("n", "<C-b>", find_buffers, {})
     vim.keymap.set("n", "<C-f-h>", builtin.help_tags, {})
     vim.keymap.set("n", "gr", find_references, {})
-  end
+  end,
 }

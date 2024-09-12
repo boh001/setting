@@ -13,7 +13,13 @@ return {
       local api = require("nvim-tree.api")
 
       local function opts(desc)
-        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        return {
+          desc = "nvim-tree: " .. desc,
+          buffer = bufnr,
+          noremap = true,
+          silent = true,
+          nowait = true,
+        }
       end
 
       api.config.mappings.default_on_attach(bufnr)
@@ -32,16 +38,14 @@ return {
       vim.keymap.set("n", "<C-]>", api.tree.change_root_to_node, opts("CD"))
     end
 
-    local gwidth = vim.api.nvim_list_uis()[1].width
-    local gheight = vim.api.nvim_list_uis()[1].height
-    local width = 70
-    local height = 65
-
     require("nvim-tree").setup({
       on_attach = on_attach,
       -- project.nvim
       trash = {
         cmd = "trash-put",
+      },
+      view = {
+        width = 50,
       },
       sync_root_with_cwd = true,
       respect_buf_cwd = true,
@@ -49,22 +53,6 @@ return {
         enable = true,
         update_root = true,
       },
-
-      view = {
-        float = {
-          enable = true,
-          quit_on_focus_loss = true,
-          open_win_config = {
-            relative = "editor",
-            width = width,
-            height = height,
-            row = (gheight - height) * 0.4,
-            col = (gwidth - width) * 0.95,
-            border = "rounded",
-          }
-        }
-      },
-
       filters = {
         git_ignored = false,
         dotfiles = false,
@@ -80,8 +68,18 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<C-t>", "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>", { noremap = true, silent = true })
+    vim.keymap.set(
+      "n",
+      "<C-t>",
+      "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>",
+      { noremap = true, silent = true }
+    )
 
-    vim.keymap.set("n", "<C-h>", "<cmd>lua require('nvim-tree.api').tree.focus()<CR>", { noremap = true, silent = true })
-  end
+    vim.keymap.set(
+      "n",
+      "<C-h>",
+      "<cmd>lua require('nvim-tree.api').tree.focus()<CR>",
+      { noremap = true, silent = true }
+    )
+  end,
 }
