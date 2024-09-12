@@ -40,8 +40,7 @@ return {
         -- rust
         require("none-ls.formatting.rustfmt"),
         -- golang
-        null_ls.builtins.formatting.goimports_revise,
-        null_ls.builtins.diagnostics.golangci_lint,
+        null_ls.builtins.formatting.gofmt,
         -- terraform
         null_ls.builtins.formatting.terraform_fmt,
         --xml

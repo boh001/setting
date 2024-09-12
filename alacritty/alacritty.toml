@@ -1,0 +1,16 @@
+import = ["~/.config/alacritty/cyberdream.toml"]
+
+shell = { program = "/bin/zsh" }
+live_config_reload = true
+
+[window]
+startup_mode = "Fullscreen"
+
+[font]
+normal = { family = "Hack Nerd Font", style = 'Regular' }
+bold = { family = "Hack Nerd Font", style = 'Bold' }
+italic = { family = 'Hack Nerd Font', style = 'Italic' }
+size = 16
+
+[terminal]
+osc52 = "CopyPaste"

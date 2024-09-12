@@ -29,7 +29,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
+        ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -55,8 +55,19 @@ return {
 
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", ",a", ":CodeActionMenu<CR>", opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set(
+          "n",
+          "<leader>a",
+          '<cmd>lua require("fastaction").code_action()<CR>',
+          { buffer = ev.buf }
+        )
+        vim.keymap.set(
+          "v",
+          "<leader>a",
+          "<esc><cmd>lua require('fastaction').range_code_action()<CR>",
+          { buffer = ev.buf }
+        )
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
         vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
@@ -158,10 +169,6 @@ return {
     })
 
     for _, lsp in ipairs(lsps) do
-      if lsp.name == "tailwindcss" then
-        break
-      end
-
       lspconfig[lsp.name].setup({
         capabilities = capabilities,
         on_attach = on_attach,
@@ -310,7 +317,7 @@ return {
     -- UI
 
     local signs =
-    { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
+      { Error = icons.error, Warn = icons.warningTriangle, Hint = icons.light, Info = icons.info }
 
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type

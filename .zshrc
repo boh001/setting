@@ -42,3 +42,5 @@ export PATH="/Users/sanghyeon/.local/share/solana/install/active_release/bin:$PA
 
 #nvim
 export PATH="$HOME/.local/share/bob/v0.10.1/nvim-macos-arm64/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
