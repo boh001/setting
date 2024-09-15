@@ -50,7 +50,6 @@ return {
     })
 
     telescope.load_extension("workspaces")
-    telescope.load_extension("noice")
     telescope.load_extension("fzf")
 
     local builtin = require("telescope.builtin")
