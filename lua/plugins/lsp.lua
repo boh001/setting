@@ -145,6 +145,9 @@ return {
         name = "rust_analyzer",
       },
       {
+        name = "clangd",
+      },
+      {
         name = "gopls",
       },
       {
