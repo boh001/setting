@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/cyberdream.toml"]
+import = ["~/.config/alacritty/catppuccin-latte.toml"]
 
 shell = { program = "/bin/zsh" }
 live_config_reload = true

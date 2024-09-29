@@ -118,7 +118,7 @@ return {
         name = "eslint",
       },
       {
-        name = "tsserver",
+        name = "ts_ls",
       },
       {
         name = "tailwindcss",
@@ -143,6 +143,10 @@ return {
       },
       {
         name = "rust_analyzer",
+      },
+      --- toml
+      {
+        name = "taplo",
       },
       {
         name = "clangd",
