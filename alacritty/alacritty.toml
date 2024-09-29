@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/catppuccin-latte.toml"]
+import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
 
 shell = { program = "/bin/zsh" }
 live_config_reload = true
@@ -7,10 +7,13 @@ live_config_reload = true
 startup_mode = "Fullscreen"
 
 [font]
-normal = { family = "Hack Nerd Font", style = 'Regular' }
-bold = { family = "Hack Nerd Font", style = 'Bold' }
-italic = { family = 'Hack Nerd Font', style = 'Italic' }
+normal = { family = "JetBrainsMono Nerd Font", style = 'Regular' }
+bold = { family = "JetBrainsMono Nerd Font", style = 'Bold' }
+italic = { family = "JetBrainsMono Nerd Font", style = 'Italic' }
 size = 16
 
 [terminal]
 osc52 = "CopyPaste"
+
+[env]
+TERM = "xterm-256color"
